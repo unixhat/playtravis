@@ -8,7 +8,7 @@ env:
         - COMMIT=${TRAVIS_COMMIT::9}
 
 script:
-    - export REPO=unixhat/playtravis
+    - export REPO=heriyanto/playtravis
     - docker build -t $REPO . 
     - docker images
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
