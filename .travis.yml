@@ -16,5 +16,6 @@ script:
     - docker build -t $REPO:$COMMIT .
     - docker tag $REPO:$COMMIT $REPO:$TAG
     - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
-    - docker push $REPO
+    - docker push docker.io/unixhat/playtravis
+#    - docker push $REPO
     - docker logout
