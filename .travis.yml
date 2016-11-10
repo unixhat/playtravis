@@ -8,7 +8,6 @@ env:
         - COMMIT=${TRAVIS_COMMIT::8}
 
 script:
-	- docker
     - export REPO=unixhat/playtravis
     - docker build -t $REPO . 
 #    - docker images
