@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+   apache-php7:
+     build: .
+     ports:
+       - "8000:80"
+     restart: always
+   jenkins:
+     image: jenkins
+     ports:
+       - "8080:8080"
+   registry:
+     image: registry
+     ports:
+       - "5000:5000"
+   sonarqube:
+     image: sonarqube
+     ports:
+       - "9000:9000"
