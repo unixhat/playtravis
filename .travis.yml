@@ -10,9 +10,9 @@ env:
 script:
     - export REPO=heriyanto/playtravis
     - sudo rm /usr/local/bin/docker-compose
-    - sudo curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > /usr/local/bin/docker-compose
-    - sudo chmod +x /usr/local/bin/docker-compose
-    - sudo /usr/local/bin/docker-compose up -d --build
+    - sudo curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > docker-compose
+    - sudo chmod +x docker-compose
+    - sudo docker-compose up -d --build
     - docker images
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
     - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
