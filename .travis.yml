@@ -13,6 +13,7 @@ script:
     - sudo curl -L "https://github.com/docker/compose/releases/download/1.8.1/docker-compose-$(uname -s)-$(uname -m)" > docker-compose
     - sudo chmod +x docker-compose
     - sudo mv docker-compose /usr/local/bin/
+    - sudo docker-compose up -d --build
     - docker images
     - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
     - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
