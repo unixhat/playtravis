@@ -4,7 +4,7 @@ services:
    apache-php7:
      build: .
      ports:
-       - "8000:80"
+       - "80:80"
      restart: always
 #   jenkins:
 #     image: jenkins
