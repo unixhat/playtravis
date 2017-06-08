@@ -15,7 +15,7 @@ script:
     - sudo mv docker-compose /usr/local/bin/
     - sudo docker-compose up -d --build
     - docker images
-    - docker login -e=shell.heriyanto@gmail.com -u=heriyanto -p=P3zhK{EmzECB`~Ac
+    - docker login -e=shell.heriyanto@gmail.com -u=heriyanto -p=temppass123
     - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
     - docker build -t $REPO:$COMMIT .
     - docker tag $REPO:$COMMIT $REPO:$TAG
