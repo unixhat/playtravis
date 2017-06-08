@@ -1,2 +1,2 @@
 <?php 
-echo 'versi 13';
+echo 'versi 14';
